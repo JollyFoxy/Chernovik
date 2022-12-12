@@ -14,7 +14,7 @@ public class Forms {
     private SelenideElement firstName = $(By.xpath("//input[@id='firstName']"));
     private SelenideElement lastName = $(By.xpath("//input[@id='lastName']"));
     private SelenideElement userEmail = $(By.xpath("//input[@id='userEmail']"));
-    private SelenideElement genderMale = $(By.xpath("//div[@class='custom-control custom-radio custom-control-inline']//input "));
+    private SelenideElement genderMale = $(By.xpath("//div[@class='custom-control custom-radio custom-control-inline']//label[.='Male']"));
     private SelenideElement userNumber = $(By.xpath("//input[@id='userNumber']"));
     private SelenideElement dateOfBirth = $(By.xpath("//input[@id='dateOfBirthInput']"));
     private SelenideElement monthSelect = $(By.xpath("//select[@class='react-datepicker__month-select']"));
@@ -23,7 +23,10 @@ public class Forms {
     private SelenideElement year2002 = $(By.xpath("//option[@value='2002']"));
     private SelenideElement date_18_11_2002 = $(By.xpath("//div[@aria-label='Choose Monday, November 18th, 2002']"));
     private SelenideElement subjects = $(By.xpath("//input[@id='subjectsInput']"));
-    private SelenideElement hobbiesMusic = $(By.xpath("//input[@id='hobbies-checkbox-3']"));
+    private SelenideElement hobbiesMusic = $(By.xpath("//label[.='Music']"));
+    private SelenideElement currentAddress = $(By.xpath("//textarea[@id='currentAddress']"));
+    private SelenideElement state = $(By.xpath("//div[@id='state']"));
+    private SelenideElement city = $()
 
     @Step
     public void inputForms (){
@@ -41,6 +44,8 @@ public class Forms {
         year2002.click();
         date_18_11_2002.click();
         subjects.val("???");
+        hobbiesMusic.click();
+        currentAddress.val("Пушкина 23");
 
     }
 }
