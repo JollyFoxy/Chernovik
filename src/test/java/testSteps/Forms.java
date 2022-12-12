@@ -15,6 +15,8 @@ public class Forms {
     private SelenideElement lastName = $(By.xpath("//input[@id='lastName']"));
     private SelenideElement userEmail = $(By.xpath("//input[@id='userEmail']"));
     private SelenideElement genderMale = $(By.xpath("//div[@class='custom-control custom-radio custom-control-inline']//label[.='Male']"));
+    private SelenideElement genderFemale = $(By.xpath("//div[@class='custom-control custom-radio custom-control-inline']//label[.='Female']"));
+    private SelenideElement genderOther = $(By.xpath("//div[@class='custom-control custom-radio custom-control-inline']//label[.='Other']"));
     private SelenideElement userNumber = $(By.xpath("//input[@id='userNumber']"));
     private SelenideElement dateOfBirth = $(By.xpath("//input[@id='dateOfBirthInput']"));
     private SelenideElement monthSelect = $(By.xpath("//select[@class='react-datepicker__month-select']"));
@@ -24,28 +26,76 @@ public class Forms {
     private SelenideElement date_18_11_2002 = $(By.xpath("//div[@aria-label='Choose Monday, November 18th, 2002']"));
     private SelenideElement subjects = $(By.xpath("//input[@id='subjectsInput']"));
     private SelenideElement hobbiesMusic = $(By.xpath("//label[.='Music']"));
+    private SelenideElement hobbiesSports = $(By.xpath("//label[.='Sports']"));
+    private SelenideElement hobbiesReading = $(By.xpath("//label[.='Reading']"));
     private SelenideElement currentAddress = $(By.xpath("//textarea[@id='currentAddress']"));
     private SelenideElement state = $(By.xpath("//div[@id='state']"));
-    private SelenideElement city = $()
+    private SelenideElement city = $(By.xpath("//div[@id='city']"));
+    private SelenideElement btnSubmit = $(By.xpath("//button[@id='submit']"));
 
-    @Step
+    @Step("Переход в формы")
     public void inputForms (){
         forms.should(Condition.visible).click();
         registrationForm.should(Condition.visible).click();
-        firstName.val("Павел");
-        lastName.val("Мизирев");
-        userEmail.val("pavel@mail.com");
-        genderMale.click();
-        userNumber.val("88005553535");
+    }
+    @Step("Ввод имени и фамилии")
+    public void inputFirstNameAndLastName(String name, String lastname) {
+        firstName.val(name);
+        lastName.val(lastname);
+    }
+    @Step("Вводим почту")
+    public void inputEmail(String email) {
+        userEmail.val(email);
+    }
+    @Step("Выбор гендора")
+    public void inputGender(String gender){
+        switch (gender){
+            case "Male": genderMale.click();
+            break;
+            case "Female": genderFemale.click();
+            break;
+            case "Other": genderOther.click();
+            break;
+        }
+    }
+    @Step("Ввод номера")
+    public void inputNumber(String number){
+        userNumber.val(number);
+    }
+    @Step("Ввод даты рождения")
+    public void inputDateOfBirth() {
         dateOfBirth.click();
         monthSelect.click();
         november.click();
         yearSelect.click();
         year2002.click();
         date_18_11_2002.click();
-        subjects.val("???");
-        hobbiesMusic.click();
-        currentAddress.val("Пушкина 23");
-
+    }
+    @Step("Ввод обьекта")
+    public void inputSubjects(String sub){
+        subjects.val(sub);
+    }
+    @Step("Выбор хобби")
+    public void inputHobbies(String hobbies) {
+        switch (hobbies){
+            case("Sports"):hobbiesSports.click();
+            break;
+            case ("Reading"):hobbiesReading.click();
+            break;
+            case ("Music"): hobbiesMusic.click();
+            break;
+        }
+    }
+    @Step("Ввод адреса")
+    public void inputAddress(String address ){
+        currentAddress.val(address);
+//        state.click();
+//        state.val("NCR");
+//        city.click();
+//        city.val("Delhi");
+    }
+    @Step("Кнопка приёмки")
+    public void submit(){
+        btnSubmit.click();
     }
 }

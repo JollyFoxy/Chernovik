@@ -26,10 +26,19 @@ public class MainTest {
     @Test
     public void testTextBox(){
         textBox.inputMyName();
-        //textBox.checkInfo();
+        textBox.checkInfo();
     }
     @Test
     public void testForms(){
         forms.inputForms();
+        forms.inputFirstNameAndLastName("Павел","Мизирев");
+        forms.inputEmail("pavel@mail.com");
+        forms.inputGender("Male");
+        forms.inputNumber("88005553535");
+        forms.inputDateOfBirth();
+        forms.inputSubjects("???");
+        forms.inputHobbies("Music");
+        forms.inputAddress("Пушкина 23");
+        forms.submit();
     }
 }
