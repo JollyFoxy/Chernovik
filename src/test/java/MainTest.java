@@ -3,6 +3,7 @@ import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import testSteps.Forms;
+import testSteps.Registration;
 import testSteps.TextBox;
 
 import static com.codeborne.selenide.Selenide.open;
@@ -10,9 +11,9 @@ import static com.codeborne.selenide.Selenide.open;
 public class MainTest {
 
     private static String url ="https://demoqa.com/";
-
     TextBox textBox = new TextBox();
     Forms forms = new Forms();
+    Registration registration =new Registration();
 
     @BeforeAll
     static void beforeConfig() {
@@ -40,5 +41,14 @@ public class MainTest {
         forms.inputHobbies("Music");
         forms.inputAddress("Пушкина 23");
         forms.submit();
+    }
+    @Test
+    public void testRegistration(){
+        registration.skroleBody();
+        registration.inputBookStoreApplication();
+        registration.newUser();
+        registration.createUser("Павел","Мизирев","JellyFox","Qq-123456!");
+        registration.recaptcha();
+        registration.registerNewUser();
     }
 }

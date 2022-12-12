@@ -33,14 +33,14 @@ public class Forms {
     private SelenideElement city = $(By.xpath("//div[@id='city']"));
     private SelenideElement btnSubmit = $(By.xpath("//button[@id='submit']"));
 
-    @Step("Переход в формы")
+    @Step("Переход в элемент \"Practice Form\"")
     public void inputForms (){
         forms.should(Condition.visible).click();
         registrationForm.should(Condition.visible).click();
     }
     @Step("Ввод имени и фамилии")
-    public void inputFirstNameAndLastName(String name, String lastname) {
-        firstName.val(name);
+    public void inputFirstNameAndLastName(String first_name, String lastname) {
+        firstName.val(first_name);
         lastName.val(lastname);
     }
     @Step("Вводим почту")
@@ -94,7 +94,7 @@ public class Forms {
 //        city.click();
 //        city.val("Delhi");
     }
-    @Step("Кнопка приёмки")
+    @Step("Нажатие кнопки \"submit\"")
     public void submit(){
         btnSubmit.click();
     }
