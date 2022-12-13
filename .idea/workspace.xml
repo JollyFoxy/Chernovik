@@ -5,10 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="57b4d23d-669e-475a-beda-d4d2c26fa991" name="Changes" comment="Доделать Форму...">
-      <change afterPath="$PROJECT_DIR$/src/test/java/testSteps/Registration.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/testSteps/CheckBox.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/MainTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/MainTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/testSteps/Forms.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/testSteps/Forms.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/testSteps/Registration.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/testSteps/Registration.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

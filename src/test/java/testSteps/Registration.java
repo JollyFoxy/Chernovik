@@ -2,29 +2,25 @@ package testSteps;
 
 import com.codeborne.selenide.SelenideElement;
 import io.qameta.allure.Step;
-import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.support.ui.WebDriverWait;
+
 
 import static com.codeborne.selenide.Selenide.$;
-import static org.openqa.selenium.support.ui.ExpectedConditions.alertIsPresent;
+import static com.codeborne.selenide.Selenide.sleep;
+
 
 public class Registration {
     private SelenideElement body = $(By.xpath("//div[@class='body-height']"));
     private SelenideElement bookStoreApplication =$(By.xpath("//div[@class='card-body']//h5[.='Book Store Application']"));
     private SelenideElement login = $(By.xpath("//div[@class='element-group']//li[@id='item-0']//span[.='Login']"));
     private SelenideElement btnNewUser = $(By.xpath("//button[@id='newUser']"));
-    private SelenideElement firstName = $(By.xpath("//input[@id='firstName']"));
-    private SelenideElement lastName = $(By.xpath("//input[@id='lastName']"));
+    private SelenideElement firstName = $(By.xpath("//input[@id='firstname']"));
+    private SelenideElement lastName = $(By.xpath("//input[@id='lastname']"));
     private SelenideElement userName = $(By.xpath("//input[@id='userName']"));
     private SelenideElement password = $(By.xpath("//input[@id='password']"));
-    private SelenideElement captcha = $(By.xpath("//label[@id='recaptcha-anchor-label']"));
+    private SelenideElement captcha = $(By.xpath("//div[@id='rc-anchor-container']"));
     private SelenideElement register = $(By.xpath("//button[@id='register']"));
 
-    WebDriver driver =new ChromeDriver();
-    WebDriverWait wait = new WebDriverWait(driver,1000);
 
     @Step("Прокрутка страницы")
     public void skroleBody(){
@@ -48,12 +44,12 @@ public class Registration {
     }
     @Step("Проверка на робота")
     public void recaptcha(){
-        captcha.click();
+//        captcha.click();//не получилось
+        // время для ручного прохождения recaptcha
+        sleep(10000);//не придумал ничего умнее
     }
     @Step("нажатие кнопки \"Register\"")
     public void registerNewUser (){
         register.click();
     }
-    Alert alert = wait.until(alertIsPresent());
-    alert.accept();
 }
