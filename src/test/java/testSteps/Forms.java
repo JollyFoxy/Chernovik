@@ -89,7 +89,7 @@ public class Forms {
     @Step("Ввод адреса")
     public void inputAddress(String address ){
         currentAddress.val(address);
-//        state.click();
+        state.click();
 //        state.val("NCR");
 //        city.click();
 //        city.val("Delhi");

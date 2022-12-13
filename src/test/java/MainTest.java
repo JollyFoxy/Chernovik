@@ -10,7 +10,7 @@ import static com.codeborne.selenide.Selenide.open;
 
 public class MainTest {
 
-    private static String url ="https://demoqa.com/";
+    private static String baseUrl ="https://demoqa.com/";
     TextBox textBox = new TextBox();
     Forms forms = new Forms();
     Registration registration =new Registration();
@@ -23,7 +23,7 @@ public class MainTest {
     }
     @BeforeEach
     public void before() {
-        open(url);
+        open(baseUrl);
     }
     @Test
     public void testTextBox(){
@@ -54,6 +54,9 @@ public class MainTest {
     }
     @Test
     public void testCheckBox(){
-
+        checkBox.inputCheckBox();
+        checkBox.openAll();
+        checkBox.elementSelection();
+        checkBox.closeHome();
     }
 }

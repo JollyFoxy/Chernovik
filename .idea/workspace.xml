@@ -5,12 +5,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="57b4d23d-669e-475a-beda-d4d2c26fa991" name="Changes" comment="Доделать Форму...">
-      <change afterPath="$PROJECT_DIR$/src/test/java/testSteps/CheckBox.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.allure/allure-2.13.6/bin/allure" beforeDir="false" afterPath="$PROJECT_DIR$/.allure/allure-2.13.6/bin/allure" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.allure/allure-2.13.6/bin/allure.bat" beforeDir="false" afterPath="$PROJECT_DIR$/.allure/allure-2.13.6/bin/allure.bat" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/MainTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/MainTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/testSteps/Registration.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/testSteps/Registration.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/testSteps/CheckBox.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/testSteps/CheckBox.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/testSteps/Forms.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/testSteps/Forms.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -47,12 +48,22 @@
     &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;
   }
 }</component>
-  <component name="RunManager" selected="JUnit.MainTest.testRegistration">
+  <component name="RunManager" selected="JUnit.MainTest.testTextBox">
     <configuration name="MainTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Chernovik" />
       <option name="PACKAGE_NAME" value="" />
       <option name="MAIN_CLASS_NAME" value="MainTest" />
       <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="MainTest.testCheckBox" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Chernovik" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="MainTest" />
+      <option name="METHOD_NAME" value="testCheckBox" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -87,29 +98,13 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="TextBox.checkInfo" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="Chernovik" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="testSteps.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="testSteps" />
-      <option name="MAIN_CLASS_NAME" value="testSteps.TextBox" />
-      <option name="METHOD_NAME" value="checkInfo" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.MainTest.testRegistration" />
+        <item itemvalue="JUnit.MainTest.testTextBox" />
         <item itemvalue="JUnit.MainTest" />
         <item itemvalue="JUnit.MainTest.testForms" />
-        <item itemvalue="JUnit.MainTest.testTextBox" />
-        <item itemvalue="JUnit.TextBox.checkInfo" />
+        <item itemvalue="JUnit.MainTest.testCheckBox" />
+        <item itemvalue="JUnit.MainTest.testRegistration" />
       </list>
     </recent_temporary>
   </component>

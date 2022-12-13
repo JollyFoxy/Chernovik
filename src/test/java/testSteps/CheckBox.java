@@ -12,7 +12,7 @@ public class CheckBox {
     private SelenideElement btnPlus = $(By.xpath("//button[@class='rct-option rct-option-expand-all']"));
     private SelenideElement wordFile = $(By.xpath("//label[@for='tree-node-wordFile']"));
     private SelenideElement packageOffice = $(By.xpath("//label[@for='tree-node-office']"));
-    private SelenideElement arrow = $(By.xpath("//svg[@xmlns='http://www.w3.org/2000/svg']"));
+    private SelenideElement arrow = $(By.xpath("//button[@class='rct-collapse rct-collapse-btn']"));
 
     @Step("Переход в \"Elements/Check Box\"")
     public void inputCheckBox(){
@@ -29,7 +29,7 @@ public class CheckBox {
         wordFile.click();
     }
     @Step("Закрытие дерева \"Home\"")
-    private void closeHome (){
+    public void closeHome (){
         arrow.click();
     }
 }
