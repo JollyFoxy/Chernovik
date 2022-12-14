@@ -3,6 +3,7 @@ package testSteps;
 import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.SelenideElement;
 import io.qameta.allure.Step;
+import org.junit.jupiter.api.Assertions;
 import org.openqa.selenium.By;
 
 import static com.codeborne.selenide.Selenide.$;
@@ -32,8 +33,10 @@ public class Forms {
     private SelenideElement state = $(By.xpath("//div[@id='state']"));
     private SelenideElement city = $(By.xpath("//div[@id='city']"));
     private SelenideElement btnSubmit = $(By.xpath("//button[@id='submit']"));
+    private SelenideElement closeLargeModal =$(By.xpath("//button[@id='closeLargeModal']"));
+    private SelenideElement uploadPicture = $(By.xpath("//input[@id='uploadPicture']"));
 
-    @Step("Переход в элемент \"Practice Form\"")
+    @Step("Перейти с домашней страницы на страницу \"Practice Form\"")
     public void inputForms (){
         forms.should(Condition.visible).click();
         registrationForm.should(Condition.visible).click();
@@ -43,7 +46,7 @@ public class Forms {
         firstName.val(first_name);
         lastName.val(lastname);
     }
-    @Step("Вводим почту")
+    @Step("Ввод почты")
     public void inputEmail(String email) {
         userEmail.val(email);
     }
@@ -74,6 +77,7 @@ public class Forms {
     @Step("Ввод обьекта")
     public void inputSubjects(String sub){
         subjects.val(sub);
+//        Assertions.assertEquals(subjects.should(Condition.visible).getText(), sub);
     }
     @Step("Выбор хобби")
     public void inputHobbies(String hobbies) {
@@ -86,6 +90,10 @@ public class Forms {
             break;
         }
     }
+    @Step("Звгрузка автара")
+    public void avatrUpload(String way){
+        uploadPicture.val(way);
+    }
     @Step("Ввод адреса")
     public void inputAddress(String address ){
         currentAddress.val(address);
@@ -97,5 +105,9 @@ public class Forms {
     @Step("Нажатие кнопки \"submit\"")
     public void submit(){
         btnSubmit.click();
+    }
+    @Step
+    public void closeWidow(){
+        closeLargeModal.click();
     }
 }

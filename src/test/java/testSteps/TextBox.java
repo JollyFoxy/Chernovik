@@ -22,22 +22,36 @@ public class TextBox {
     private SelenideElement checkCurrentAddress = $(By.xpath("//p[@id='currentAddress']"));
     private SelenideElement checkPermanentAddress = $(By.xpath("//p[@id='permanentAddress']"));
 
-    @Step
-    public void inputMyName() {
+    @Step("Перейти с домашней страницы на страницу \"Text Box\"")
+    public void inputTextBox() {
         element.should(Condition.visible).click();
         textBox.should(Condition.visible).click();
-        fulName.should(Condition.visible).val("Павел");
-        eMail.should(Condition.visible).val("pavel@mial.com");
-        currentAddress.should(Condition.visible).val("Пушкина 23");
-        permanentAddress.should(Condition.visible).val("Советская 43");
-        btnSubmit.should(Condition.visible).click();
-
     }
-    @Step
+    @Step("Заполнить поле \"Full Name\" ")
+    public void inputFullName(String name){
+        fulName.should(Condition.visible).val(name);
+    }
+    @Step("Зполнить поле \"Email\"")
+    public void inputEmail(String email) {
+        eMail.should(Condition.visible).val(email);
+    }
+    @Step("Зполнить поле \"Current Address\"")
+    public void inputCurrentAddress(String address) {
+        currentAddress.should(Condition.visible).val(address);
+    }
+    @Step("Зполнить поле \"Permanent Address\"")
+    public void inputPermanentAddress(String address) {
+        permanentAddress.should(Condition.visible).val(address);
+    }
+    @Step("Кликнуть на  кнопку \"Submit\"")
+    public void submit(){
+        btnSubmit.should(Condition.visible).click();
+    }
+    @Step("Атоматическая проверка введёной информации")
     public void checkInfo(){
-        Assertions.assertEquals(checkName.should(Condition.visible).getText(), "Name:Павел");
-        Assertions.assertEquals(checkEmail.should(Condition.visible).getText(), "Email:pavel@mial.com");
-        Assertions.assertEquals(checkCurrentAddress.should(Condition.visible).getText(), "Current Address :Пушкина 23");
-        Assertions.assertEquals(checkPermanentAddress.should(Condition.visible).getText(), "Permananet Address :Советская 43");
+        Assertions.assertEquals("Name:Павел", checkName.should(Condition.visible).getText());
+        Assertions.assertEquals("Email:pavel@mial.com",checkEmail.should(Condition.visible).getText());
+        Assertions.assertEquals("Current Address :Пушкина 23",checkCurrentAddress.should(Condition.visible).getText());
+        Assertions.assertEquals("Permananet Address :Советская 43",checkPermanentAddress.should(Condition.visible).getText());
     }
 }

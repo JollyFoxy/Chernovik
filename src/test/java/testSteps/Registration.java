@@ -2,6 +2,7 @@ package testSteps;
 
 import com.codeborne.selenide.SelenideElement;
 import io.qameta.allure.Step;
+import org.junit.jupiter.api.Assertions;
 import org.openqa.selenium.By;
 
 
@@ -18,7 +19,7 @@ public class Registration {
     private SelenideElement lastName = $(By.xpath("//input[@id='lastname']"));
     private SelenideElement userName = $(By.xpath("//input[@id='userName']"));
     private SelenideElement password = $(By.xpath("//input[@id='password']"));
-    private SelenideElement captcha = $(By.xpath("//div[@id='rc-anchor-container']"));
+    private SelenideElement captcha = $(By.xpath("//span[@aria-labelledby='recaptcha-anchor-label']"));
     private SelenideElement register = $(By.xpath("//button[@id='register']"));
 
 
@@ -42,9 +43,10 @@ public class Registration {
         userName.val(user_name);
         password.val(pass);
     }
+
     @Step("Проверка на робота")
     public void recaptcha(){
-//        captcha.click();//не получилось
+        captcha.click();//не получилось
         // время для ручного прохождения recaptcha
         sleep(10000);//не придумал ничего умнее
     }

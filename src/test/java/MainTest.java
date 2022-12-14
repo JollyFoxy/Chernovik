@@ -1,12 +1,11 @@
 import com.codeborne.selenide.Configuration;
 import org.junit.jupiter.api.*;
-import testSteps.CheckBox;
-import testSteps.Forms;
-import testSteps.Registration;
-import testSteps.TextBox;
+import org.testng.annotations.BeforeMethod;
+import testSteps.*;
 
 
 import static com.codeborne.selenide.Selenide.open;
+import static com.codeborne.selenide.Selenide.sleep;
 
 public class MainTest {
 
@@ -15,10 +14,11 @@ public class MainTest {
     Forms forms = new Forms();
     Registration registration =new Registration();
     CheckBox checkBox= new CheckBox();
+    AutoComplete autoComplete= new AutoComplete();
 
     @BeforeAll
     static void beforeConfig() {
-        //Configuration.timeout = 3000;
+        Configuration.timeout = 3000;
         Configuration.browserSize = "1620x1080";
     }
     @BeforeEach
@@ -27,7 +27,12 @@ public class MainTest {
     }
     @Test
     public void testTextBox(){
-        textBox.inputMyName();
+        textBox.inputTextBox();
+        textBox.inputFullName("Павел");
+        textBox.inputEmail("pavel@mial.com");
+        textBox.inputCurrentAddress("Пушкина 23");
+        textBox.inputPermanentAddress("Советская 43");
+        textBox.submit();
         textBox.checkInfo();
     }
     @Test
@@ -40,8 +45,11 @@ public class MainTest {
         forms.inputDateOfBirth();
         forms.inputSubjects("???");
         forms.inputHobbies("Music");
+        forms.avatrUpload("C:\\Users\\инет\\IdeaProjects\\Chernovik");
         forms.inputAddress("Пушкина 23");
         forms.submit();
+        forms.closeWidow();
+//        sleep(1000000);
     }
     @Test
     public void testRegistration(){
